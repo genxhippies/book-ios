@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D77F97621BA873100059F670 /* ComicBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F97611BA873100059F670 /* ComicBook.swift */; };
+		D77F97641BA875870059F670 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F97631BA875870059F670 /* BookViewController.swift */; };
 		D7FDF7A11BA7112900EFA7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDF7A01BA7112900EFA7CA /* AppDelegate.swift */; };
-		D7FDF7A31BA7112900EFA7CA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDF7A21BA7112900EFA7CA /* FirstViewController.swift */; };
-		D7FDF7A51BA7112900EFA7CA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDF7A41BA7112900EFA7CA /* SecondViewController.swift */; };
 		D7FDF7A81BA7112900EFA7CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FDF7A61BA7112900EFA7CA /* Main.storyboard */; };
 		D7FDF7AA1BA7112900EFA7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FDF7A91BA7112900EFA7CA /* Assets.xcassets */; };
 		D7FDF7AD1BA7112900EFA7CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FDF7AB1BA7112900EFA7CA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D77F97611BA873100059F670 /* ComicBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicBook.swift; sourceTree = "<group>"; };
+		D77F97631BA875870059F670 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		D7FDF79D1BA7112900EFA7CA /* ComicBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FDF7A01BA7112900EFA7CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7FDF7A21BA7112900EFA7CA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D7FDF7A41BA7112900EFA7CA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D7FDF7A71BA7112900EFA7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7FDF7A91BA7112900EFA7CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7FDF7AC1BA7112900EFA7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,10 +56,10 @@
 		D7FDF79F1BA7112900EFA7CA /* ComicBook */ = {
 			isa = PBXGroup;
 			children = (
+				D77F97631BA875870059F670 /* BookViewController.swift */,
 				D7FDF7A01BA7112900EFA7CA /* AppDelegate.swift */,
-				D7FDF7A21BA7112900EFA7CA /* FirstViewController.swift */,
-				D7FDF7A41BA7112900EFA7CA /* SecondViewController.swift */,
 				D7FDF7A61BA7112900EFA7CA /* Main.storyboard */,
+				D77F97611BA873100059F670 /* ComicBook.swift */,
 				D7FDF7A91BA7112900EFA7CA /* Assets.xcassets */,
 				D7FDF7AB1BA7112900EFA7CA /* LaunchScreen.storyboard */,
 				D7FDF7AE1BA7112900EFA7CA /* Info.plist */,
@@ -137,9 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FDF7A51BA7112900EFA7CA /* SecondViewController.swift in Sources */,
+				D77F97621BA873100059F670 /* ComicBook.swift in Sources */,
+				D77F97641BA875870059F670 /* BookViewController.swift in Sources */,
 				D7FDF7A11BA7112900EFA7CA /* AppDelegate.swift in Sources */,
-				D7FDF7A31BA7112900EFA7CA /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +287,7 @@
 				D7FDF7B31BA7112900EFA7CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
