@@ -32,48 +32,61 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOT-Tb-sRc">
-                                <rect key="frame" x="20" y="457" width="560" height="135"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOT-Tb-sRc">
+                                <rect key="frame" x="20" y="486" width="560" height="106"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39c-vc-ABR">
-                                <rect key="frame" x="527" y="384" width="53" height="30"/>
-                                <state key="normal" title="Check!!"/>
+                                <rect key="frame" x="531" y="384" width="49" height="30"/>
+                                <state key="normal" title="Check!"/>
                                 <connections>
-                                    <action selector="check:" destination="D0Z-dQ-dFZ" eventType="touchUpInside" id="C9m-rc-twN"/>
+                                    <action selector="toggleCheck:" destination="D0Z-dQ-dFZ" eventType="touchUpInside" id="yNo-nr-ujy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IId-ng-qBM">
+                                <rect key="frame" x="20" y="457" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9P4-ci-TDe" firstAttribute="top" secondItem="8RZ-D2-SC5" secondAttribute="bottom" id="5lZ-Ss-P2x"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QOT-Tb-sRc" secondAttribute="leading" id="5yP-X8-9Bw"/>
                             <constraint firstItem="9P4-ci-TDe" firstAttribute="top" secondItem="8RZ-D2-SC5" secondAttribute="bottom" id="6ec-MQ-1e7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IId-ng-qBM" secondAttribute="trailing" id="Ahx-lC-vXk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9P4-ci-TDe" secondAttribute="trailing" id="EIA-yE-gme"/>
+                            <constraint firstItem="IId-ng-qBM" firstAttribute="top" secondItem="nTJ-J6-uLg" secondAttribute="bottom" constant="8" symbolic="YES" id="Frc-31-UZm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QOT-Tb-sRc" secondAttribute="trailing" id="GPX-aQ-RAc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jx0-b5-twC" secondAttribute="leading" id="NdZ-od-uDL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9P4-ci-TDe" secondAttribute="leading" id="Pav-eh-XFl"/>
                             <constraint firstItem="QOT-Tb-sRc" firstAttribute="top" secondItem="nTJ-J6-uLg" secondAttribute="bottom" constant="8" symbolic="YES" id="Tbo-f4-QqA"/>
                             <constraint firstItem="jx0-b5-twC" firstAttribute="centerY" secondItem="39c-vc-ABR" secondAttribute="centerY" id="XP1-ax-Q7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="39c-vc-ABR" secondAttribute="trailing" id="dZR-9j-TES" userLabel="ItrailingMargin = Check!!.trailing"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="IId-ng-qBM" secondAttribute="leading" id="lw2-1W-rb8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nTJ-J6-uLg" secondAttribute="trailing" id="lzq-gC-I2r"/>
                             <constraint firstItem="jx0-b5-twC" firstAttribute="top" secondItem="9P4-ci-TDe" secondAttribute="bottom" constant="8" symbolic="YES" id="ptS-Gm-n2z"/>
                             <constraint firstItem="nTJ-J6-uLg" firstAttribute="top" secondItem="jx0-b5-twC" secondAttribute="bottom" constant="8" symbolic="YES" id="qqz-5y-K1h"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nTJ-J6-uLg" secondAttribute="leading" id="soh-6y-4LM"/>
+                            <constraint firstItem="QOT-Tb-sRc" firstAttribute="top" secondItem="IId-ng-qBM" secondAttribute="bottom" constant="8" symbolic="YES" id="vVw-oJ-GmJ"/>
                             <constraint firstItem="r9J-Zz-VWC" firstAttribute="top" secondItem="QOT-Tb-sRc" secondAttribute="bottom" constant="8" symbolic="YES" id="y3q-j7-fUH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="5lZ-Ss-P2x"/>
+                                <exclude reference="Tbo-f4-QqA"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="bookTitle" destination="jx0-b5-twC" id="2Ik-BG-6Xq"/>
+                        <outlet property="checkBtn" destination="39c-vc-ABR" id="jC6-Bf-z4g"/>
                         <outlet property="coverImage" destination="9P4-ci-TDe" id="zLb-W0-yP8"/>
                         <outlet property="desc" destination="QOT-Tb-sRc" id="K6T-yh-yfA"/>
+                        <outlet property="illustrator" destination="IId-ng-qBM" id="iIg-Rf-0Zy"/>
                         <outlet property="pubDate" destination="nTJ-J6-uLg" id="zdg-HJ-FCJ"/>
                     </connections>
                 </viewController>

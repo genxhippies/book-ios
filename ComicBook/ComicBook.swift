@@ -14,4 +14,5 @@ class ComicBook {
     var desc: String = ""
     var coverImage: UIImage?
     var pubDate: NSDate?
+    var checked: Bool = false
 }
