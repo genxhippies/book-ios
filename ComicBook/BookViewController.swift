@@ -16,7 +16,6 @@ class BookViewController: UIViewController {
     @IBOutlet weak var pubDate: UILabel!
     @IBOutlet weak var illustrator: UILabel!
     @IBOutlet weak var desc: UILabel!
-    @IBOutlet weak var checkBtn: UIButton!
     
     var comicBook = ComicBook()
     
@@ -42,11 +41,6 @@ class BookViewController: UIViewController {
         desc.text = comicBook.desc
         coverImage.image = comicBook.coverImage
         illustrator.text = comicBook.illustrator
-        setCheckedButton(comicBook.checked)
-    }
-    
-    func setCheckedButton(isChecked: Bool) {
-        checkBtn.setTitle(isChecked ? "Checked!" : "Check!", forState: UIControlState.Normal)
     }
     
 
@@ -63,7 +57,9 @@ class BookViewController: UIViewController {
     // MARK: IBActions
     @IBAction func toggleCheck(sender: AnyObject) {
         comicBook.checked = !comicBook.checked
-        setCheckedButton(comicBook.checked)
+        
+        let checkBtn = sender as! UIButton
+        checkBtn.setTitle(comicBook.checked ? "Checked!" : "Check!", forState: UIControlState.Normal)
     }
     
     // MARK: Temporary functions
