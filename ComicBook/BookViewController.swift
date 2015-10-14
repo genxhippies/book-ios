@@ -17,7 +17,9 @@ class BookViewController: UIViewController {
     @IBOutlet weak var illustrator: UILabel!
     @IBOutlet weak var desc: UILabel!
     
-    var comicBook = ComicBook()
+    // optional로 설정하지 않으면 View contoller를 생성할 때 초기화를 반드시 해야 하므로
+    // initializer가 필요하다는 에러 메시지가 발생한다.
+    var comicBook: ComicBook?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +37,12 @@ class BookViewController: UIViewController {
     }
     
     func setBookData() {
-        bookTitle.text = comicBook.bookTitle
+        bookTitle.text = comicBook!.bookTitle
         // TODO: pubDate가 이상하게 나오는데 이걸 해결하는 방법이 동영상에 있음
-        pubDate.text = comicBook.pubDate!.getFormattedString("yyyy-MM-dd")
-        desc.text = comicBook.desc
-        coverImage.image = comicBook.coverImage
-        illustrator.text = comicBook.illustrator
+        pubDate.text = comicBook!.pubDate!.getFormattedString("yyyy-MM-dd")
+        desc.text = comicBook!.desc
+        coverImage.image = comicBook!.coverImage
+        illustrator.text = comicBook!.illustrator
     }
     
 
@@ -56,20 +58,16 @@ class BookViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func toggleCheck(sender: AnyObject) {
-        comicBook.checked = !comicBook.checked
+        // TODO 아래 코드 왼편의 comicBook!.checked 에서 !를 없앨 수 있는 방법은 없나?
+        comicBook!.checked = !comicBook!.checked
         
         let checkBtn = sender as! UIButton
-        checkBtn.setTitle(comicBook.checked ? "Checked!" : "Check!", forState: UIControlState.Normal)
+        checkBtn.setTitle(comicBook!.checked ? "Checked!" : "Check!", forState: UIControlState.Normal)
     }
     
     // MARK: Temporary functions
     private func loadData() {
-        comicBook.bookTitle = "원피스 78"
-        comicBook.illustrator = "오다 에이이치로"
-        comicBook.desc = "오다 에이이치로 원피스 짱짱맨"
-        comicBook.pubDate = NSDate()
-        comicBook.coverImage = UIImage(named: "SampleBook")
-        comicBook.checked = false
+        comicBook = ComicBook(bookTitle: "원피스 78", illustrator: "오다 에이이치로", desc: "오다 에이이치로 원피스 짱짱맨", coverImage: UIImage(named: "SampleBook"), pubDate: NSDate())
     }
 }
 
