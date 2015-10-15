@@ -9,6 +9,7 @@
 import UIKit
 
 class ComicBook {
+    var isbn: String = ""
     var bookTitle: String = ""
     var illustrator: String = ""
     var desc: String = ""
@@ -16,7 +17,8 @@ class ComicBook {
     var pubDate: NSDate?
     var checked: Bool = false
     
-    init (bookTitle: String, illustrator: String, desc: String, coverImage: UIImage?, pubDate: NSDate?, checked: Bool = false) {
+    init (isbn: String, bookTitle: String, illustrator: String, desc: String = "", coverImage: UIImage?, pubDate: NSDate?, checked: Bool = false) {
+        self.isbn = isbn
         self.bookTitle = bookTitle
         self.illustrator = illustrator
         self.desc = desc

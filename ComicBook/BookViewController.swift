@@ -67,7 +67,7 @@ class BookViewController: UIViewController {
     
     // MARK: Temporary functions
     private func loadData() {
-        comicBook = ComicBook(bookTitle: "원피스 78", illustrator: "오다 에이이치로", desc: "오다 에이이치로 원피스 짱짱맨", coverImage: UIImage(named: "SampleBook"), pubDate: NSDate())
+        comicBook = ComicBook(isbn: "1234567890123", bookTitle: "원피스 78", illustrator: "오다 에이이치로", desc: "오다 에이이치로 원피스 짱짱맨", coverImage: UIImage(named: "SampleBook"), pubDate: NSDate())
     }
 }
 

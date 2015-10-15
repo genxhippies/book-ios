@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class BookCollctionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let REUSE_IDENTIFIER_COMIC_BOOK = "ComicBook"
     var comicBooks = [ComicBook]()
+    var urlString = "http://book.iizs.net/books/"
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -19,6 +21,42 @@ class BookCollctionViewController: UIViewController, UICollectionViewDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
+            if let url = NSURL(string: self.urlString) {
+                if let data = try? NSData(contentsOfURL: url, options: []) {
+                    let jsonData = JSON(data: data)
+                    self.parseJSON(jsonData)
+                    
+                    dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+                        self.collectionView.reloadData()
+                    }
+                } else {
+                    self.showError("Failed to get remote data.")
+                }
+            } else {
+                self.showError("Invalid URL \(self.urlString)")
+            }
+        }
+    }
+    
+    func showError(message: String) {
+        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+            let alertController = UIAlertController(title: "Data Load Error", message: message, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func parseJSON(jsonData: JSON) {
+        for result in jsonData["results"].arrayValue {
+            let isbn = result["isbn"].stringValue
+            let bookTitle = result["title"].stringValue
+            let illustrator = result["author"].stringValue
+            
+            let comicBook = ComicBook(isbn: isbn, bookTitle: bookTitle, illustrator: illustrator, coverImage: nil, pubDate: nil)
+            
+            comicBooks.append(comicBook)
+        }
     }
 
     override func didReceiveMemoryWarning() {

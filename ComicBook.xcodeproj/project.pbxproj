@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D742F6631BCFFB8400B6EE1C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D742F6621BCFFB8400B6EE1C /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		D77F97621BA873100059F670 /* ComicBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F97611BA873100059F670 /* ComicBook.swift */; };
 		D77F97641BA875870059F670 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F97631BA875870059F670 /* BookViewController.swift */; };
 		D7C550CD1BCC0A61005F1011 /* BookCollctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C550CC1BCC0A61005F1011 /* BookCollctionViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D742F6621BCFFB8400B6EE1C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = lib/SwiftyJSON.swift; sourceTree = "<group>"; };
 		D77F97611BA873100059F670 /* ComicBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicBook.swift; sourceTree = "<group>"; };
 		D77F97631BA875870059F670 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		D7C550CC1BCC0A61005F1011 /* BookCollctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollctionViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D742F6611BCFFB5F00B6EE1C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D742F6621BCFFB8400B6EE1C /* SwiftyJSON.swift */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		D7FDF7941BA7112900EFA7CA = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		D7FDF79F1BA7112900EFA7CA /* ComicBook */ = {
 			isa = PBXGroup;
 			children = (
+				D742F6611BCFFB5F00B6EE1C /* lib */,
 				D77F97631BA875870059F670 /* BookViewController.swift */,
 				D7FDF7A01BA7112900EFA7CA /* AppDelegate.swift */,
 				D7FDF7A61BA7112900EFA7CA /* Main.storyboard */,
@@ -146,6 +157,7 @@
 				D77F97621BA873100059F670 /* ComicBook.swift in Sources */,
 				D77F97641BA875870059F670 /* BookViewController.swift in Sources */,
 				D7FDF7A11BA7112900EFA7CA /* AppDelegate.swift in Sources */,
+				D742F6631BCFFB8400B6EE1C /* SwiftyJSON.swift in Sources */,
 				D7C550CF1BCC0E54005F1011 /* BookCollectionViewCell.swift in Sources */,
 				D7C550CD1BCC0A61005F1011 /* BookCollctionViewController.swift in Sources */,
 			);
