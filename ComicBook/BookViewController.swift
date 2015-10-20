@@ -21,13 +21,19 @@ class BookViewController: UIViewController {
     // initializer가 필요하다는 에러 메시지가 발생한다.
     var comicBook: ComicBook?
     
+    // interface builder나 nib file로부터 읽어들인 후에 실행됨
+    // custom으로 ui를 그리기에 적당한 곳이라는 생각이 듬
+    override func awakeFromNib() {
+        // title을 Back으로 선택해도 이전 controller의 title이 표시되는데
+        // navigationItem.backBarButtonItem으로 설정했기 때문인듯
+        let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        
-        loadData()
-        
         setBookData()
     }
 
@@ -37,12 +43,17 @@ class BookViewController: UIViewController {
     }
     
     func setBookData() {
-        bookTitle.text = comicBook!.bookTitle
-        // TODO: pubDate가 이상하게 나오는데 이걸 해결하는 방법이 동영상에 있음
-        pubDate.text = comicBook!.pubDate!.getFormattedString("yyyy-MM-dd")
-        desc.text = comicBook!.desc
-        coverImage.image = comicBook!.coverImage
-        illustrator.text = comicBook!.illustrator
+        if let comicBook = comicBook {
+            bookTitle.text = comicBook.bookTitle
+            coverImage.image = UIImage(named: "SampleBook") //comicBook.coverImage
+            illustrator.text = comicBook.illustrator
+            // TODO: pubDate가 이상하게 나오는데 이걸 해결하는 방법이 동영상에 있음
+            pubDate.text = NSDate().getFormattedString("yyyy-MM-dd")// comicBook!.pubDate!.getFormattedString("yyyy-MM-dd")
+            desc.text = "Sample text. There's no data." //comicBook!.desc
+
+            // 타이틀바의 제목을 책제목으로 설정
+            navigationItem.title = comicBook.bookTitle
+        }
     }
     
 
@@ -63,11 +74,6 @@ class BookViewController: UIViewController {
         
         let checkBtn = sender as! UIButton
         checkBtn.setTitle(comicBook!.checked ? "Checked!" : "Check!", forState: UIControlState.Normal)
-    }
-    
-    // MARK: Temporary functions
-    private func loadData() {
-        comicBook = ComicBook(isbn: "1234567890123", bookTitle: "원피스 78", illustrator: "오다 에이이치로", desc: "오다 에이이치로 원피스 짱짱맨", coverImage: UIImage(named: "SampleBook"), pubDate: NSDate())
     }
 }
 

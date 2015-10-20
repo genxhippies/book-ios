@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Book Collction View Controller-->
+        <!--신간 정보-->
         <scene sceneID="JZu-hB-LDb">
             <objects>
                 <viewController id="ctX-oL-FRA" customClass="BookCollctionViewController" customModule="ComicBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,6 +49,7 @@
                                         <connections>
                                             <outlet property="bookTitle" destination="PeV-ee-h9s" id="CIJ-T1-JpJ"/>
                                             <outlet property="coverImage" destination="fc3-vd-kRh" id="Tlq-dx-bxq"/>
+                                            <segue destination="D0Z-dQ-dFZ" kind="show" identifier="ViewBookDetail" id="qe0-si-WCf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -66,16 +67,16 @@
                             <constraint firstItem="34r-Sn-7lA" firstAttribute="top" secondItem="LN2-MR-wO9" secondAttribute="bottom" id="rAL-6b-cew"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yyp-dB-9FP"/>
+                    <navigationItem key="navigationItem" title="신간 정보" id="yyp-dB-9FP"/>
                     <connections>
                         <outlet property="collectionView" destination="LN2-MR-wO9" id="0C0-Vf-ezA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5s4-1Y-kHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="-284"/>
+            <point key="canvasLocation" x="1229" y="-295"/>
         </scene>
-        <!--Book View Controller-->
+        <!--Book Title-->
         <scene sceneID="bob-8v-sXN">
             <objects>
                 <viewController id="D0Z-dQ-dFZ" customClass="BookViewController" customModule="ComicBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,35 +89,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleBook" translatesAutoresizingMaskIntoConstraints="NO" id="9P4-ci-TDe">
-                                <rect key="frame" x="20" y="20" width="560" height="349"/>
+                                <rect key="frame" x="20" y="64" width="560" height="349"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx0-b5-twC">
-                                <rect key="frame" x="20" y="377" width="159" height="43"/>
+                                <rect key="frame" x="20" y="421" width="159" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-J6-uLg">
-                                <rect key="frame" x="20" y="428" width="560" height="21"/>
+                                <rect key="frame" x="20" y="472" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOT-Tb-sRc">
-                                <rect key="frame" x="20" y="486" width="560" height="106"/>
+                                <rect key="frame" x="20" y="530" width="560" height="62"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39c-vc-ABR">
-                                <rect key="frame" x="531" y="384" width="49" height="30"/>
+                                <rect key="frame" x="531" y="428" width="49" height="30"/>
                                 <state key="normal" title="Check!"/>
                                 <connections>
                                     <action selector="toggleCheck:" destination="D0Z-dQ-dFZ" eventType="touchUpInside" id="yNo-nr-ujy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IId-ng-qBM">
-                                <rect key="frame" x="20" y="457" width="560" height="21"/>
+                                <rect key="frame" x="20" y="501" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -151,6 +152,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Book Title" id="NtU-Xi-C5g"/>
                     <connections>
                         <outlet property="bookTitle" destination="jx0-b5-twC" id="2Ik-BG-6Xq"/>
                         <outlet property="coverImage" destination="9P4-ci-TDe" id="zLb-W0-yP8"/>
@@ -161,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSM-Qn-8Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="-279"/>
+            <point key="canvasLocation" x="1926" y="-295"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QV9-gy-0dP">
@@ -179,7 +181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRb-ge-qxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="-284"/>
+            <point key="canvasLocation" x="515" y="-295"/>
         </scene>
     </scenes>
     <resources>

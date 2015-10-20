@@ -12,6 +12,8 @@ import UIKit
 class BookCollctionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let REUSE_IDENTIFIER_COMIC_BOOK = "ComicBook"
+    let SEGUE_IDENTIFIER_VIEW_DETAIL = "ViewBookDetail"
+    
     var comicBooks = [ComicBook]()
     var urlString = "http://book.iizs.net/books/"
 
@@ -81,14 +83,22 @@ class BookCollctionViewController: UIViewController, UICollectionViewDelegate, U
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == SEGUE_IDENTIFIER_VIEW_DETAIL {
+            let comicBookDetailViewController = segue.destinationViewController as! BookViewController
+            
+            if let targetCell = sender as? BookCollectionViewCell {
+                let indexPath = collectionView.indexPathForCell(targetCell)!
+                let selectedBook = comicBooks[indexPath.row]
+                // 보통 아래와 같이 caller에서 callee에 값을 설정하는 방식으로 진행된다.
+                comicBookDetailViewController.comicBook = selectedBook
+            }
+        }
+    }
 }
